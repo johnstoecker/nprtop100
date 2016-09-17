@@ -1,0 +1,113 @@
+@import url('http://fonts.googleapis.com/css?family=Arvo:regular,bold');
+
+html,body {
+	height:100%;
+}
+body {
+	margin:0;
+	padding:0;
+  background:#000;
+	font-family:Helvetica,arial,serif;
+	font-size:1em;
+	color:#FFF;
+}
+p,h1,h2,ul,li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+a {
+	outline:none;
+	text-decoration:none;
+	color:#FFF;
+}
+a,p,span,h1 {
+	font-family:'Arvo',arial,serif;
+}
+a:hover {
+	text-decoration:underline;
+  cursor: pointer;
+  cursor: hand;
+}
+h2 {
+	margin-top: 20px;
+}
+.book-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.book-container {
+	background-color: grey;
+	color: wheat;
+	padding: 10px;
+	width: 700px;
+	display: flex;
+	margin: 10px;
+}
+.book-details {
+	width: 300px;
+}
+.book-author {
+	width: 200px;
+}
+.book-extras {
+	display: flex;
+	flex-direction:column;
+	width: 270px;
+}
+.book-extra {
+	flex: 1 0 auto;
+}
+.book-extra-label {
+	color: lightyellow;
+}
+.book-extra-content {
+}
+.book-read-by:after {
+  content: ', ';
+}
+.book-read-by:last-child:after {
+	content: '';
+}
+.flex-tile-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 10px;
+}
+.flex-tile {
+  flex: 1;
+  margin: 0px 10px 10px 0px;
+}
+.tile {
+  position:relative;
+}
+.tile-title {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(147,71,190,0.7);
+  width: 100%;
+  padding: 10px 0px;
+}
+.tile-title-text {
+  margin-left: 5px;
+}
+.tile-description {
+  font-size: 12px;
+  width: 300px;
+  margin: 10px 0px;
+}
+.tile-youtube-link {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+}
+.tile-doc-link {
+  position: absolute;
+  top: 100px;
+  right: 60px;
+}
+.tile, img.tile {
+  width: 300px;
+  height: 222px;
+}

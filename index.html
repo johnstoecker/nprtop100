@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+
+<!doctype html>
+<html ng-app="bookChallenge">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="description" content="NPR Top 100 List"/>
+		<meta name="keywords" content="john, stoecker"/>
+		<meta name="classification" content="public"/>
+		<meta name="resource-type" content="document"/>
+		<meta name="author" content="johnstoecker.com"/>
+		<meta name="copyright" content="johnstoecker.com"/>
+		<script src="assets/jquery-2.2.1.min.js"></script>
+		<script src="assets/tabletop.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="assets/main.js"></script>
+
+		<link rel="stylesheet" href="css/main.css" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div ng-controller="BookChallengeController">
+			<div class="book-list">
+				<h2>NPR Top 100 Challenge</h2>
+				<div>
+					<span ng-repeat="name in names">
+						{{name}}:{{totals[name]}}
+					</span>
+				</div>
+        <div class="book-container" ng-repeat="book in bookData">
+					<img src="{{book.Cover}}" />
+					<div class="book-details">
+						<div class="book-title">{{book.Title}}</div>
+						<div class="book-author">{{book.Author}}</div>
+						Read by:
+						<span class="book-read-by" ng-repeat="name in names">
+							<span ng-if="book[name]=='x'">
+								{{name}}
+							</span>
+						</span>
+					</div>
+					<div class="book-extras">
+						<span class="book-extra" ng-repeat="col in extraCols" ng-if="book[col] !=='' && book[col] !== null">
+							<div class="book-extra-label">{{col}}:</div>
+							{{book[col]}}
+						</span>
+					</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
