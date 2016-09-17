@@ -40,9 +40,30 @@
 						</span>
 					</div>
 					<div class="book-extras">
-						<span class="book-extra" ng-repeat="col in extraCols" ng-if="book[col] !=='' && book[col] !== null">
-							<div class="book-extra-label">{{col}}:</div>
+            <span class="book-extra" ng-repeat="name in names" ng-if="((book[name+' says']!=='' && book[name+' says']!==undefined) || (book[name+' rates']!=='' && book[name+' rates']!==undefined))">
+              <div class="book-extra-label">
+                <span ng-if="book[name+' says']!=='' && book[name+' says']!== undefined">
+                  {{name}} says:
+                </span>
+                <span ng-if="book[name+' rates']!=='' && book[name+' says']==''">
+                  {{name}} rates:
+                </span>
+                <span ng-if="book[name+' rates']!==''">
+                  <img src="assets/{{book[name+' rates']}}.png" />
+                </span>
+              </div>
+              <div ng-if="book[name+' says']!==''">
+                {{book[name+' says']}}
+              </div>
+						<!-- <span class="book-extra" ng-repeat="col in comments" ng-if="book[col] !=='' && book[col] !== null">
+							<div class="book-extra-label"></div>
+                <span> {{col}}:</span>
+                <div ng-if="book[]"
 							{{book[col]}}
+						</span> -->
+            <!-- <span class="book-extra" ng-repeat="col in ratings" ng-if="book[col] !=='' && book[col] !== null">
+							<div class="book-extra-label">{{col}}:</div>
+							{{book[col]}} -->
 						</span>
 					</div>
         </div>
