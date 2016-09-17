@@ -32,6 +32,11 @@ a:hover {
 h2 {
 	margin-top: 20px;
 }
+.book-sort {
+	position: absolute;
+	width: 700px;
+	top: 50px;
+}
 .book-list {
 	display: flex;
 	flex-direction: column;

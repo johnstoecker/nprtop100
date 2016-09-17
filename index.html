@@ -27,43 +27,49 @@
 						{{name}}:{{totals[name]}}
 					</span>
 				</div>
-        <div class="book-container" ng-repeat="book in bookData">
+        <div class="book-sort">
+          <select ng-model="sortAttribute" ng-change="changeSort()">
+            <option ng-repeat="sortSelector in sortBySelectors" value="{{sortSelector.value}}">
+              {{sortSelector.name}}
+            </option>
+          </select>
+          <a ng-click="reverseSort()">
+            <img src="assets/{{sortReverseString}}.png" />
+          </a>
+        </div>
+        <div class="book-container" ng-repeat="book in bookData | orderBy:sortAttributes:sortReverse">
 					<img class="book-cover" src="{{book.Cover}}" />
 					<div class="book-details">
 						<div class="book-title">{{book.Title}}</div>
 						<div class="book-author">{{book.Author}}</div>
-						Read by:
-						<span class="book-read-by" ng-repeat="name in names" ng-if="book[name]=='x'">
-							<span>
-								{{name}}
-							</span>
-						</span>
+            <div>
+  						Read by:
+  						<span class="book-read-by" ng-repeat="name in names" ng-if="book[name]=='x'">
+  							<span>
+  								{{name}}
+  							</span>
+  						</span>
+            </div>
+            <div ng-if="book.rating !== undefined">
+              <img src="assets/{{book.rating}}.png" ng-if="book.rating !== undefined" />
+            </div>
 					</div>
 					<div class="book-extras">
-            <span class="book-extra" ng-repeat="name in names" ng-if="((book[name+' says']!=='' && book[name+' says']!==undefined) || (book[name+' rates']!=='' && book[name+' rates']!==undefined))">
+            <span class="book-extra" ng-repeat="name in names" ng-if="((book[name+' says']!=='' && book[name+' says']!==undefined))">
               <div class="book-extra-label">
-                <span ng-if="book[name+' says']!=='' && book[name+' says']!== undefined">
+                <span>
                   {{name}} says:
                 </span>
-                <span ng-if="book[name+' rates']!=='' && book[name+' says']==''">
+                <!-- <span ng-if="book[name+' rates']!=='' && book[name+' says']==''">
                   {{name}} rates:
-                </span>
-                <span ng-if="book[name+' rates']!==''">
+                </span> -->
+                <!-- <span ng-if="book[name+' rates']!==''">
                   <img src="assets/{{book[name+' rates']}}.png" />
-                </span>
+                </span> -->
               </div>
               <div ng-if="book[name+' says']!==''">
                 {{book[name+' says']}}
               </div>
-						<!-- <span class="book-extra" ng-repeat="col in comments" ng-if="book[col] !=='' && book[col] !== null">
-							<div class="book-extra-label"></div>
-                <span> {{col}}:</span>
-                <div ng-if="book[]"
-							{{book[col]}}
-						</span> -->
-            <!-- <span class="book-extra" ng-repeat="col in ratings" ng-if="book[col] !=='' && book[col] !== null">
-							<div class="book-extra-label">{{col}}:</div>
-							{{book[col]}} -->
 						</span>
 					</div>
         </div>
