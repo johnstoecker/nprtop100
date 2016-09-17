@@ -45,6 +45,9 @@ h2 {
 	display: flex;
 	margin: 10px;
 }
+.book-cover {
+	height: 100%;
+}
 .book-details {
 	width: 300px;
 }

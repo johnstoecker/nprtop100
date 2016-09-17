@@ -28,13 +28,13 @@
 					</span>
 				</div>
         <div class="book-container" ng-repeat="book in bookData">
-					<img src="{{book.Cover}}" />
+					<img class="book-cover" src="{{book.Cover}}" />
 					<div class="book-details">
 						<div class="book-title">{{book.Title}}</div>
 						<div class="book-author">{{book.Author}}</div>
 						Read by:
-						<span class="book-read-by" ng-repeat="name in names">
-							<span ng-if="book[name]=='x'">
+						<span class="book-read-by" ng-repeat="name in names" ng-if="book[name]=='x'">
+							<span>
 								{{name}}
 							</span>
 						</span>
