@@ -56,8 +56,10 @@ angular.module('bookChallenge', [])
           data[i]["rating"] = (sum/data[i]["ratings"].length).toFixed(0);
         }
       }
-      console.log($scope.names);
-      console.log($scope.totals);
+      $scope.people = []
+      for(var i = 0; i < $scope.names.length; i++) {
+        $scope.people.push({name: $scope.names[i], total: $scope.totals[$scope.names[i]]})
+      }
       $scope.sortBySelectors = [{ name: 'NPR Ranking', value: null}, {name: 'Rating', value: 'rating'}];
       $scope.sortByOptions = ['index'];
       for(var i = 0; i < $scope.names.length; i++){

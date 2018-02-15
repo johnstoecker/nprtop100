@@ -22,10 +22,11 @@
     <div ng-controller="BookChallengeController">
 			<div class="book-list">
 				<h2>NPR Top 100 Challenge</h2>
-				<div>
-					<span ng-repeat="name in names">
-						{{name}}:{{totals[name]}}
-					</span>
+				<div class="leaderboard">
+					<div class="leaderboard-row" ng-repeat="person in people | orderBy : '-total'">
+						<div class="leaderboard-col-left">{{person.name}}:</div>
+            <div class="leaderboard-col-right">{{person.total}}</div>
+					</div>
 				</div>
         <div class="book-sort">
           <select ng-model="sortAttribute" ng-change="changeSort()">

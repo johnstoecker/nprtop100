@@ -32,8 +32,27 @@ a:hover {
 h2 {
 	margin-top: 20px;
 }
+
+.leaderboard {
+	display: flex;
+	flex-direction: column;
+}
+
+.leaderboard-row {
+	display: flex;
+}
+
+.leaderboard-col-left {
+	text-align: right;
+	flex: 1 0 auto;
+}
+
+.leaderboard-col-right {
+	text-align: left;
+	flex: 0 0 auto;
+}
+
 .book-sort {
-	position: absolute;
 	width: 700px;
 	top: 50px;
 }
