@@ -11,10 +11,10 @@
 		<meta name="resource-type" content="document"/>
 		<meta name="author" content="johnstoecker.com"/>
 		<meta name="copyright" content="johnstoecker.com"/>
-		<script src="assets/jquery-2.2.1.min.js"></script>
-		<script src="assets/tabletop.js"></script>
+		<script src="https://stoeckerimages.s3.us-west-2.amazonaws.com/nprtop100/assets/jquery-2.2.1.min.js"></script>
+		<script src="https://stoeckerimages.s3.us-west-2.amazonaws.com/nprtop100/assets/tabletop.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="assets/main.js"></script>
+    <script src="https://stoeckerimages.s3.us-west-2.amazonaws.com/nprtop100/assets/main.js"></script>
 
 		<link rel="stylesheet" href="css/main.css" type="text/css" media="all"/>
   </head>
@@ -35,7 +35,7 @@
             </option>
           </select>
           <a ng-click="reverseSort()">
-            <img src="assets/{{sortReverseString}}.png" />
+            <img src="https://stoeckerimages.s3.us-west-2.amazonaws.com/nprtop100/assets/{{sortReverseString}}.png" />
           </a>
         </div>
         <div class="book-container" ng-repeat="book in bookData | orderBy:sortAttributes:sortReverse">
@@ -52,7 +52,7 @@
   						</span>
             </div>
             <div ng-if="book.rating !== undefined">
-              <img src="assets/{{book.rating}}.png" ng-if="book.rating !== undefined" />
+              <img src="https://stoeckerimages.s3.us-west-2.amazonaws.com/nprtop100/assets/{{book.rating}}.png" ng-if="book.rating !== undefined" />
             </div>
 					</div>
 					<div class="book-extras">
@@ -65,7 +65,7 @@
                   {{name}} rates:
                 </span> -->
                 <!-- <span ng-if="book[name+' rates']!==''">
-                  <img src="assets/{{book[name+' rates']}}.png" />
+                  <img src="https://stoeckerimages.s3.us-west-2.amazonaws.com/assets/{{book[name+' rates']}}.png" />
                 </span> -->
               </div>
               <div ng-if="book[name+' says']!==''">
